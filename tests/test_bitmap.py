@@ -76,3 +76,10 @@ def test_bitmap_equality(status: Bitmap[Status]) -> None:
     assert status == 1
     assert status != 2
     assert status != "invalid type"
+
+
+def test_bitmap_hashability(status: Bitmap[Status]) -> None:
+    """Test that Bitmap instances are hashable."""
+    match = "Bitmap objects are mutable and cannot be hashed."
+    with pytest.raises(TypeError, match=match):
+        hash(status)

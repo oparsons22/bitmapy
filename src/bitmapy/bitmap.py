@@ -88,3 +88,13 @@ class Bitmap[T: IntFlag]:
         if isinstance(value, int):
             return self.value == value
         return NotImplemented
+
+    def __hash__(self) -> int:
+        """
+        Prevent hashing of Bitmap objects.
+
+        Raises:
+            TypeError: If an attempt is made to hash a Bitmap object.
+        """
+        msg = "Bitmap objects are mutable and cannot be hashed."
+        raise TypeError(msg)
