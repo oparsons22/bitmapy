@@ -1,1 +1,5 @@
-"""A lightweight Python library for creating and manipulating bitmap images."""
+"""Bitmap manipulation and operations."""
+
+from bitmapy.bitmap import Bitmap
+
+__all__ = ["Bitmap"]
