@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/oparsons22/bitmapy/actions/workflows/ci.yaml/badge.svg)](https://github.com/oparsons22/bitmapy/actions/workflows/ci.yaml)
 
-A lightweight Python library for bitmap manipulation and operations. Designed for simplicity, performance, and type safety.
+A lightweight Python library for bitmap manipulation and operations.
 
 ## Features
 

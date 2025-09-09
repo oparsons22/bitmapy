@@ -64,3 +64,15 @@ def test_bitmap_reset(status: Bitmap[Status]) -> None:
     """Test resetting the bitmap to zero."""
     status.reset()
     assert status.value == 0
+
+
+def test_bitmap_equality(status: Bitmap[Status]) -> None:
+    """Test equality comparisons for the bitmap."""
+    another_status = Bitmap[Status](value=1)
+    different_status = Bitmap[Status](value=2)
+
+    assert status == another_status
+    assert status != different_status
+    assert status == 1
+    assert status != 2
+    assert status != "invalid type"

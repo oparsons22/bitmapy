@@ -1,4 +1,4 @@
-"""Create and manipulate bitmap values."""
+"""Bitmap manipulation and operations."""
 
 from enum import IntFlag
 from typing import get_args
@@ -80,3 +80,11 @@ class Bitmap[T: IntFlag]:
     def __str__(self) -> str:
         """Return the string representation of the bitmap value in binary format."""
         return f"0b{self.value:0{len(self)}b}"
+
+    def __eq__(self, value: object) -> bool:
+        """Check equality with another Bitmap or integer value."""
+        if isinstance(value, Bitmap):
+            return self.value == value.value
+        if isinstance(value, int):
+            return self.value == value
+        return NotImplemented

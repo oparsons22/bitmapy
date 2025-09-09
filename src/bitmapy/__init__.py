@@ -1,4 +1,4 @@
-"""Create and manipulate bitmap values."""
+"""Bitmap manipulation and operations."""
 
 from bitmapy.bitmap import Bitmap
 
