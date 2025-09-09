@@ -1,12 +1,23 @@
 [project]
 name = "bitmapy"
 version = "0.1.0"
-description = "Add your description here"
+description = "Create and manipulate bitmap values."
 readme = "README.md"
 authors = [{ name = "Oliver Parsons", email = "oparsons22@gmail.com" }]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = ["pytest>=8.4.2", "ruff>=0.12.12"]
 
 [build-system]
 requires = ["uv_build>=0.8.15,<0.9.0"]
 build-backend = "uv_build"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812", # missing-trailing-comma
+]
+pydocstyle = { convention = "pep257" }
+
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
