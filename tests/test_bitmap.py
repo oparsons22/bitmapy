@@ -1,7 +1,14 @@
 """Unit tests for bitmap.py."""
 
+import pytest
 from bitmapy.bitmap import Bitmap
 from tests.conftest import Status
+
+
+def test_bitmap_is_set(status: Bitmap[Status]) -> None:
+    """Test checking if bits are set in the bitmap."""
+    assert status.is_set(Status.BIT_0)
+    assert not status.is_set(Status.BIT_1)
 
 
 def test_bitmap_set(status: Bitmap[Status]) -> None:
@@ -39,3 +46,21 @@ def test_bitmap_string_representation(status: Bitmap[Status]) -> None:
 def test_bitmap_flags(status: Bitmap[Status]) -> None:
     """Test retrieving set flags from the bitmap."""
     assert status.flags == ["BIT_0"]
+
+
+def test_enum_type(status: Bitmap[Status]) -> None:
+    """Test retrieving the enum type from the bitmap."""
+    assert type(status._enum_type) is type(Status)
+
+
+def test_enum_type_error() -> None:
+    """Test that a TypeError is raised if the generic type is not specified."""
+    status = Bitmap()
+    with pytest.raises(TypeError, match="Generic type T must be specified."):
+        _ = status._enum_type
+
+
+def test_bitmap_reset(status: Bitmap[Status]) -> None:
+    """Test resetting the bitmap to zero."""
+    status.reset()
+    assert status.value == 0

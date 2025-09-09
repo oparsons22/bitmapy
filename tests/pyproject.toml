@@ -5,4 +5,5 @@ extend = "../pyproject.toml"
 ignore = [
     "S101",    # assert
     "PLR2004", # magic-value-comparison
+    "SLF001",  # private-member-access
 ]

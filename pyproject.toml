@@ -5,7 +5,10 @@ description = "Create and manipulate bitmap values."
 readme = "README.md"
 authors = [{ name = "Oliver Parsons", email = "oparsons22@gmail.com" }]
 requires-python = ">=3.13"
-dependencies = ["pytest>=8.4.2", "ruff>=0.12.12"]
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest-cov>=6.3.0", "pytest>=8.4.2", "ruff>=0.12.12"]
 
 [build-system]
 requires = ["uv_build>=0.8.15,<0.9.0"]
@@ -18,6 +21,9 @@ ignore = [
 ]
 pydocstyle = { convention = "pep257" }
 
-
 [tool.pytest.ini_options]
 pythonpath = ["."]
+addopts = "--cov=src --cov-report=term-missing:skip-covered"
+
+[tool.coverage.report]
+fail_under = 100
