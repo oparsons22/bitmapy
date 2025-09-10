@@ -1,6 +1,8 @@
 # bitmapy
 
 [![CI](https://github.com/oparsons22/bitmapy/actions/workflows/ci.yaml/badge.svg)](https://github.com/oparsons22/bitmapy/actions/workflows/ci.yaml)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/bitmapy?label=PyPI%20-%20Downloads)
+
 
 A lightweight Python library for bitmap manipulation and operations.
 
