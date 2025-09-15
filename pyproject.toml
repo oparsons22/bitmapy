@@ -1,6 +1,6 @@
 [project]
 name = "bitmapy"
-version = "1.0.0"
+version = "1.0.1"
 description = "Bitmap manipulation and operations."
 readme = "README.md"
 authors = [{ name = "Oliver Parsons", email = "oparsons22@gmail.com" }]

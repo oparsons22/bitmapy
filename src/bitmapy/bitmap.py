@@ -14,7 +14,7 @@ class Bitmap[T: IntFlag]:
         Keyword Arguments:
             value -- The initial value of the bitmap (default: {0}).
         """
-        self.value = value
+        self.value: int = value
 
     @property
     def _enum_type(self) -> T:
